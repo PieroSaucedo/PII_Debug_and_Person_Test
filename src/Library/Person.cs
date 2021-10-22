@@ -4,15 +4,18 @@ namespace UnitTestAndDebug
 {
     public class Person
     {
-        public Person(string name, string id)
+        public Person(string name, string id, string nacimiento)
         {
             this.Name = name;
             this.ID = id;
+            this.Nacimiento = nacimiento;
         }
 
         private string name;
 
         private string id;
+
+        private string nacimiento;
 
         public string Name
         {
@@ -44,10 +47,25 @@ namespace UnitTestAndDebug
                 }
             }
         }
+        public string Nacimiento
+        {
+            get
+            {
+                return this.nacimiento;
+            }
+
+            set
+            {
+                if (IdUtils.NacimientoIsValid(value))
+                {
+                    this.nacimiento = value;
+                }
+            }
+        }
 
         public void IntroduceYourself()
         {
-            Console.WriteLine($"Soy {this.Name} y mi cédula es {this.ID}");
+            Console.WriteLine($"Soy {this.Name}, mi cédula es {this.ID} y nací el {this.Nacimiento}");
         }
     }
 }

@@ -44,7 +44,7 @@ namespace UnitTestAndDebug
 
                 if (checkDigit != inputCheckDigit)
                 {
-                    /// Número verificador ingresado inválido
+                    // Número verificador ingresado inválido
                     return false;
                 }
             }
@@ -54,6 +54,15 @@ namespace UnitTestAndDebug
                 return false;
             }
 
+            return true;
+        }
+        public static bool NacimientoIsValid(string nacimiento)
+        {
+            nacimiento = nacimiento.Replace("/", "");
+            if(nacimiento.Length >= 9)
+            {
+                return false;
+            }
             return true;
         }
     }

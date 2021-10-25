@@ -33,16 +33,16 @@ namespace Tests
         [Test]
         public void TestNacimientoVálido() //Test para verificar cuando la fecha de nacimiento es válida
         {
-            Person testID = new Person("Piero Saucedo", "5.342.503-5", "12/02/2003");
+            Person testNacimiento = new Person("Piero Saucedo", "5.342.503-5", "12/02/2003");
             string expected = "12/02/2003";
-            Assert.AreEqual(expected, testID.Nacimiento);
+            Assert.AreEqual(expected, testNacimiento.Nacimiento);
         }
         [Test]
         public void TestNacimientoInválido() //Test para verificar cuando la fecha de nacimiento es inválida
         {
-            Person testID = new Person("Piero Saucedo", "5.342.503-5", "111112/02/2003");
+            Person testNacimiento = new Person("Piero Saucedo", "5.342.503-5", "111112/02/2003");
             string expected = null;
-            Assert.AreEqual(expected, testID.Nacimiento);
+            Assert.AreEqual(expected, testNacimiento.Nacimiento);
         }
     }
 }
